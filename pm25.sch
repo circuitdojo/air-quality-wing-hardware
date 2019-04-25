@@ -1378,6 +1378,9 @@ chip</description>
 <text x="0" y="-1.27" size="1.27" layer="27" align="top-left">&gt;VALUE</text>
 <pad name="1" x="1.25" y="0" drill="0.6" shape="square"/>
 </package>
+<package name="PLACEHOLDER" library_version="59" library_locally_modified="yes">
+<text x="-2.54" y="1.27" size="1.27" layer="51">&gt;NAME</text>
+</package>
 </packages>
 <packages3d>
 <package3d name="SOT23-6" urn="urn:adsk.eagle:package:5807329/2" type="model" library_version="57" library_locally_modified="yes">
@@ -1746,6 +1749,10 @@ chip</description>
 <wire x1="0" y1="-1.524" x2="-0.762" y2="-0.762" width="0.254" layer="94"/>
 <text x="-1.27" y="1.27" size="1.778" layer="95">&gt;NAME</text>
 <pin name="TP" x="0" y="-2.54" visible="off" length="short" direction="in" rot="R90"/>
+</symbol>
+<symbol name="PLACEHOLDER" library_version="59" library_locally_modified="yes">
+<text x="-5.08" y="-7.62" size="1.778" layer="95">&gt;NAME</text>
+<circle x="0" y="0" radius="2.54" width="0.254" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -2496,7 +2503,7 @@ chip</description>
 </technology>
 </technologies>
 </device>
-<device name="-SIP32509DT'" package="SOT23-6">
+<device name="-SIP32509DT" package="SOT23-6">
 <connects>
 <connect gate="G$1" pin="EN" pad="3"/>
 <connect gate="G$1" pin="GND" pad="4"/>
@@ -2673,6 +2680,20 @@ chip</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="PCB" prefix="PCB" library_version="59" library_locally_modified="yes">
+<gates>
+<gate name="G$1" symbol="PLACEHOLDER" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="PLACEHOLDER">
+<technologies>
+<technology name="-PS-CCS811-SI7021">
+<attribute name="MPN" value="BRD-0010" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 <library name="frames" urn="urn:adsk.eagle:library:229">
@@ -2740,7 +2761,7 @@ chip</description>
 <attribute name="TITLE" value="Particle^2 Sensor"/>
 </attributes>
 <variantdefs>
-<variantdef name="Production"/>
+<variantdef name="Production" current="yes"/>
 </variantdefs>
 <classes>
 <class number="0" name="default" width="0" drill="0">
@@ -2822,7 +2843,7 @@ chip</description>
 <part name="R5" library="wolff-den" library_urn="urn:adsk.eagle:library:6370453" deviceset="RES-0054" device="" package3d_urn="urn:adsk.eagle:package:5807335/2" value="20k"/>
 <part name="P+1" library="wolff-den" library_urn="urn:adsk.eagle:library:6370453" deviceset="VBUS" device=""/>
 <part name="GND13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="U3" library="wolff-den" library_urn="urn:adsk.eagle:library:6370453" deviceset="POWER-SWITCH" device="-SIP32509DT'" package3d_urn="urn:adsk.eagle:package:5807329/2"/>
+<part name="U3" library="wolff-den" library_urn="urn:adsk.eagle:library:6370453" deviceset="POWER-SWITCH" device="-SIP32509DT" package3d_urn="urn:adsk.eagle:package:5807329/2"/>
 <part name="Q1" library="wolff-den" library_urn="urn:adsk.eagle:library:6370453" deviceset="TRANSISTOR" device="-SOT23" package3d_urn="urn:adsk.eagle:package:5807332/3" technology="-NPN-40V-0.2A"/>
 <part name="R11" library="wolff-den" library_urn="urn:adsk.eagle:library:6370453" deviceset="RES-0041" device="" package3d_urn="urn:adsk.eagle:package:5807335/2" value="100k"/>
 <part name="GND17" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -2830,6 +2851,7 @@ chip</description>
 <part name="R13" library="wolff-den" library_urn="urn:adsk.eagle:library:6370453" deviceset="RES" device="-0402" package3d_urn="urn:adsk.eagle:package:5807335/2" technology="-976K-1%" value="976k"/>
 <part name="L2" library="wolff-den" library_urn="urn:adsk.eagle:library:6370453" deviceset="FERRITE" device="-0805" package3d_urn="urn:adsk.eagle:package:5807318/2" value="2k"/>
 <part name="TP1" library="wolff-den" library_urn="urn:adsk.eagle:library:6370453" deviceset="TP" device="" package3d_urn="urn:adsk.eagle:package:5807313/4"/>
+<part name="PCB1" library="wolff-den" library_urn="urn:adsk.eagle:library:6370453" deviceset="PCB" device="" technology="-PS-CCS811-SI7021"/>
 </parts>
 <sheets>
 <sheet>
@@ -3110,6 +3132,9 @@ chip</description>
 <instance part="TP1" gate="G$1" x="205.74" y="203.2" smashed="yes">
 <attribute name="NAME" x="204.47" y="204.47" size="1.778" layer="95"/>
 </instance>
+<instance part="PCB1" gate="G$1" x="15.24" y="12.7" smashed="yes">
+<attribute name="NAME" x="10.16" y="5.08" size="1.778" layer="95"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -3300,15 +3325,6 @@ chip</description>
 <wire x1="309.88" y1="137.16" x2="330.2" y2="137.16" width="0.1524" layer="91"/>
 <label x="309.88" y="137.16" size="1.778" layer="95"/>
 <pinref part="JP2" gate="G$1" pin="5"/>
-</segment>
-<segment>
-<wire x1="86.36" y1="121.92" x2="83.82" y2="121.92" width="0.1524" layer="91"/>
-<label x="78.74" y="121.92" size="1.778" layer="95"/>
-<pinref part="U2" gate="G$1" pin="!RESET"/>
-<pinref part="R2" gate="A" pin="1"/>
-<wire x1="83.82" y1="121.92" x2="78.74" y2="121.92" width="0.1524" layer="91"/>
-<wire x1="83.82" y1="124.46" x2="83.82" y2="121.92" width="0.1524" layer="91"/>
-<junction x="83.82" y="121.92"/>
 </segment>
 </net>
 <net name="MD" class="0">
@@ -3556,6 +3572,15 @@ chip</description>
 <label x="111.76" y="238.76" size="1.778" layer="95"/>
 <wire x1="116.84" y1="238.76" x2="111.76" y2="238.76" width="0.1524" layer="91"/>
 <pinref part="R12" gate="A" pin="1"/>
+</segment>
+<segment>
+<wire x1="86.36" y1="121.92" x2="83.82" y2="121.92" width="0.1524" layer="91"/>
+<label x="78.74" y="121.92" size="1.778" layer="95"/>
+<pinref part="U2" gate="G$1" pin="!RESET"/>
+<pinref part="R2" gate="A" pin="1"/>
+<wire x1="83.82" y1="121.92" x2="78.74" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="124.46" x2="83.82" y2="121.92" width="0.1524" layer="91"/>
+<junction x="83.82" y="121.92"/>
 </segment>
 </net>
 <net name="TX" class="0">
