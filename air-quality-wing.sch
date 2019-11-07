@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.3.2">
+<eagle version="9.5.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -2743,7 +2743,7 @@ chip</description>
 <attribute name="BOARD_NUMBER" value="BRD-0010"/>
 <attribute name="COMPANY" value="Circuit Dojo"/>
 <attribute name="DOC_NUMBER" value="SCH-0010"/>
-<attribute name="DOC_REV" value="1"/>
+<attribute name="DOC_REV" value="3"/>
 <attribute name="TITLE" value="Particle^2 Sensor"/>
 </attributes>
 <variantdefs>
