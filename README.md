@@ -1,4 +1,4 @@
-# Air Quality Wing for Particle Mesh
+# Air Quality Wing Hardware
 
 ![Render](images/render.png)
 
